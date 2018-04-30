@@ -1,0 +1,28 @@
+header {
+  padding-top: 30px;
+  font-family: arial,helvetica,sans-serif;
+  font-size: 14px;
+  ul {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    li {
+      padding: 5px 20px;
+      cursor: pointer;
+      transition: all ease-in-out .3s;
+      &:hover {
+        background: black;
+        color: white;
+      }
+    }
+  }
+  h2 {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+}

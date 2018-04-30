@@ -16,7 +16,7 @@ gulp.task('dev', [
   'dev-sass',
   'dev-js',
   'dev-views',
-], () => {gulp.start('dev-browserSync')})
+], () => {gulp.start('dev-watch')})
 
 gulp.task('dev-sass', () => {
   return gulp.src('./src/style/index.scss')
@@ -40,10 +40,15 @@ gulp.task('dev-js', () => {
     .pipe(gulp.dest('./dist/'))
 })
 
-
 gulp.task('dev-views', () => {
   return gulp.src('./src/index.html')
   .pipe(gulp.dest('./dist/'))
+})
+
+gulp.task('dev-watch', ['dev-browserSync'], () => {
+  gulp.watch('./src/index.html').on('change', () => gulp.start('dev-views'))
+  gulp.watch('./src/js/**', ['dev-js'])
+  gulp.watch('./src/style/**', ['dev-sass'])
 })
 
 gulp.task('dev-browserSync', () => {return browserSync(

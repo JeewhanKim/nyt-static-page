@@ -1,1 +1,6 @@
-@import './components/_headline.scss';
+body {
+  max-width: 970px;
+  margin: 0 auto;
+}
+
+@import './components/header.scss';

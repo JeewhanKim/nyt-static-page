@@ -1,21 +1,21 @@
 section {
-  &:first-child {
-    padding-top: 103px;
-  }
-  max-width: 970px;
+  max-width: $max-width;
   margin: 0 auto;
+  &:first-child {
+    padding-top: 103px; /* sticky nav's heights */
+  }
   .nyt-row {
     display: flex;
     align-items: center;
     align-content: stretch;
     padding-top: 2%;
     padding-bottom: 2%;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid $border-color;
     figcaption {
       padding-top: 0.5rem;
       font-size: 14px;
       text-align: right;
-      color: #aaa;
+      color: $caption-color;
       text-transform: uppercase;
     }
     h3 {
@@ -29,17 +29,14 @@ section {
     }
     span {
       font-size: 12px;
-      color: #aaa;
+      color: $caption-color;
     }
     div {
       align-self: stretch;
       box-sizing: border-box;
-      padding: 0 2%;
-      
-      
-      border-right: 1px solid #eee;
+      padding: 0 2%;      
+      border-right: 1px solid $border-color;
       overflow: hidden;
-
       &:last-child {
         border-right: 0;
       }
@@ -68,11 +65,5 @@ section {
       text-decoration: none;
       color: inherit;
     }
-  }
-  
-
-  h3 {
-    padding: 0;
-    margin: 0;
   }
 }

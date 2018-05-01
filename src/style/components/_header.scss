@@ -5,7 +5,6 @@ header {
   width: 100%;
   background: white;
   z-index: 99;
-
   ul {
     position: relative;
     list-style: none;
@@ -25,7 +24,7 @@ header {
         color: white;
       }
       &.selected {
-        background-color: #eee;
+        background-color: $primary-color;
       }
     }
   }
@@ -34,5 +33,5 @@ header {
     margin: 0;
     text-align: center;
   }
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid $border-color;
 }

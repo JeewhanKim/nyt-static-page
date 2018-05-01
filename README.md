@@ -1,9 +1,5 @@
-# NYT Project: Static Website Generation from JSONP
-Creates new web contents 
- with 
-
-Generate contents of the JSONP file.
-The basic structure for react with webpack and gulp boilerplate.
+# NYT Project: Create Static Web App using JSONP
+Creates new web contents from a JSONP file. Budnle your app using `Gulp`, `Browserify`, and `gulp-scss`.
 
 ## Getting Started
 
@@ -17,7 +13,7 @@ npm install
 This downloads all dependencies listed in package.json including Gulp.
 
 ### Quick Start
-You can simply just open `dist/index.html` file to see the bundled app.
+You can simply just open the `dist/index.html` file to see the bundled app.
 
 Run gulp and it will bundle your resources and open your browser with the url: http://localhost:8080/dist/index.html
 ```sh

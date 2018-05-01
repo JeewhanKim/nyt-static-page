@@ -1,4 +1,4 @@
-/* Initializing browser defulat styles */
+/* simply resets browser's defulat styles */
 body {
   margin: 0;
 }
@@ -7,8 +7,8 @@ h1, h2, h3, h4, h5, p {
   margin: 0;
 }
 
-@import './variables/global-variables.scss';
-@import './mixin/media-queries.scss';
-@import './components/header.scss';
-@import './components/column.scss';
-@import './components/responsive.scss';
+@import './variables/variables.scss'; // variables to store information that we want to reuse
+@import './mixin/mixin.scss'; // mixin to make groups of css declarations
+@import './components/header.scss'; // main component [header]
+@import './components/grid.scss'; // main component [grid]
+@import './components/responsive.scss'; // main component [responsive version handler]

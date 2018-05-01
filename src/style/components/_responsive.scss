@@ -1,32 +1,31 @@
-@media   (min-width: 768px) and (max-width: 959px) {
-
-}
-
-@media  (max-width:767px) {
-header {
-    h2 {
-        .nyt-logo {
-            width: 100%;
-            padding-left: 10vw;
-            image {
-                width: 80vw;
-            }
-        }
-    }
-}
-section {
-    .nyt-row {
-        flex-direction: column;
-        border-bottom: 0;
-        padding: 0;
-        div {
-            &.nyt-col-1,
-            &.nyt-col-2 {
+/* Usage of media query mixin: mobile only */
+@include mq-mobile-only() {
+    header {
+        h2 {
+            .nyt-logo {
                 width: 100%;
-                padding: 2%;
-                border-bottom: 1px solid #eee;
+                padding-left: 10vw;
+                image {
+                    width: 80vw;
+                }
             }
         }
     }
-}
+    section {
+        .nyt-row {
+            flex-direction: column;
+            border-bottom: 0;
+            padding: 0;
+            div {
+                &.nyt-col-1,
+                &.nyt-col-2 {
+                    width: 100%;
+                    padding: 2%;
+                    margin-top: 1rem;
+                    border-right: 0;
+                    border-bottom: 1px solid #eee;
+                }
+            }
+        }
+    }
 }

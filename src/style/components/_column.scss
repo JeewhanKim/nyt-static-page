@@ -34,14 +34,17 @@ section {
       align-self: stretch;
       box-sizing: border-box;
       padding: 0 2%;
-      width: 25%;
+      
+      
       border-right: 1px solid #eee;
       overflow: hidden;
 
       &:last-child {
         border-right: 0;
       }
-
+      &.nyt-col-1 {
+        width: 25%;
+      }
       &.nyt-col-2 {
         width: 50%;
       }

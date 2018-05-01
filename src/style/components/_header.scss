@@ -16,6 +16,9 @@ header {
     li {
       padding: 5px 20px;
       cursor: pointer;
+      &.selected {
+       cursor: default; 
+      }
       transition: all ease-in-out .3s;
       &:hover {
         background: black;
@@ -30,6 +33,6 @@ header {
     padding: 0;
     margin: 0;
     text-align: center;
-    border-bottom: 1px solid #eee;
   }
+  border-bottom: 1px solid #eee;
 }

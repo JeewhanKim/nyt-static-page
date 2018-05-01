@@ -1,5 +1,9 @@
 section {
-  // padding-top: 20px;
+  &:first-child {
+    padding-top: 103px;
+  }
+  max-width: 970px;
+  margin: 0 auto;
   .nyt-row {
     display: flex;
     align-items: center;
@@ -29,14 +33,29 @@ section {
     div {
       align-self: stretch;
       box-sizing: border-box;
-      padding: 2%;
+      padding: 0 2%;
       width: 25%;
       border-right: 1px solid #eee;
+      overflow: hidden;
+
+      &:last-child {
+        border-right: 0;
+      }
+
       &.nyt-col-2 {
         width: 50%;
       }
+      &.nyt-image {
+        width: 100%;
+        overflow: hidden;
+        padding: 0;
+      }
       img {
         width: 100%;
+        transition: all .2s ease-in-out;
+        &:hover {
+          transform: scale(1.1);
+        }
       }
     }
     a {

@@ -74,10 +74,7 @@ NYTD.render_section_front = (json) => {
             if(idx > returnWord.length) return
             if(isUpperCase(letter)) {
               // c. maintain the same capitalization and punctuation in the English and Martian Versions.
-              returnWord = returnWord.split('').map((letter, i) => {
-                if(idx === i) letter = letter.toUpperCase()
-                return letter
-              }).join('')
+              returnWord = returnWord.split('').map((letter, i) => (idx === i) ? letter.toUpperCase() : letter).join('')
             }
           })
           word = returnWord
@@ -99,7 +96,7 @@ NYTD.render_section_front = (json) => {
         html += `<div class="nyt-row">` // create another row every 3 + 4n columns
       }
       html += `<div class="${idx === 0 ? 'nyt-col-2': ''}">` // only the first element should be 2 column-width
-      html += `<a href="${data.link}"><picture><img src="${data.imageUrl}" tabindex="0"></picture></a>`
+      html += `<a href="${data.link}"><div class="nyt-image"><img src="${data.imageUrl}" tabindex="0"></div></a>`
       html += `<figcaption>${translate(data.figcaption, lang)}</figcaption>`
       html += `<a href="${data.link}"><h3>${translate(data.headline, lang)}</h3></a>`
       html += `<p>${translate(data.summary, lang)}</p>`
@@ -126,13 +123,7 @@ NYTD.render_section_front = (json) => {
 
   $languageSelector.find('li').click(e => {
     const option = $(e.currentTarget).attr('data-lang')
-    switch(option) {
-      case 'en':
-      viewController(refinedData)
-      break
-      case 'ma':
-      viewController(refinedData, 'ma')
-      break
-    }
+    $(e.currentTarget).addClass('selected').siblings().removeClass('selected')
+    viewController(refinedData, option)
   })
 }

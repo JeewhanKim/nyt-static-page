@@ -1,7 +1,14 @@
+/* Initializing browser defulat styles */
 body {
-  max-width: 970px;
-  margin: 0 auto;
+  margin: 0;
+}
+h1, h2, h3, h4, h5, p {
+  padding: 0;
+  margin: 0;
 }
 
+@import './variables/global-variables.scss';
+@import './mixin/media-queries.scss';
 @import './components/header.scss';
 @import './components/column.scss';
+@import './components/responsive.scss';

@@ -1,7 +1,11 @@
 header {
-  padding-top: 30px;
   font-family: arial,helvetica,sans-serif;
   font-size: 14px;
+  position: fixed;
+  width: 100%;
+  background: white;
+  z-index: 99;
+
   ul {
     position: relative;
     list-style: none;
@@ -16,6 +20,9 @@ header {
       &:hover {
         background: black;
         color: white;
+      }
+      &.selected {
+        background-color: #eee;
       }
     }
   }

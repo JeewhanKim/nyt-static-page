@@ -5,10 +5,12 @@
 @media  (max-width:767px) {
 header {
     h2 {
-        margin-left: 50%;
-        transform: translate(-50%, 0);
-        image {
-            width: 50%;
+        .nyt-logo {
+            width: 100%;
+            padding-left: 10vw;
+            image {
+                width: 80vw;
+            }
         }
     }
 }

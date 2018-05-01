@@ -57,9 +57,10 @@ NYTD.render_section_front = (json) => {
     })
   }
 
-  function isUpperCase(aCharacter) {    
-    return (aCharacter >= 'A') && (aCharacter <= 'Z');
-  }
+  /* 
+  * Function: Check if the letter is uppercase.
+  */
+  const isUpperCase = char => (char >= 'A') && (char <= 'Z')
 
   /*
   * Function: Translate Maritian

@@ -12,6 +12,7 @@ section {
     padding-bottom: 2%;
     border-bottom: 1px solid #eee;
     figcaption {
+      padding-top: 0.5rem;
       font-size: 14px;
       text-align: right;
       color: #aaa;
@@ -49,6 +50,8 @@ section {
         width: 50%;
       }
       &.nyt-image {
+        display: flex;
+        flex-direction: column;
         width: 100%;
         overflow: hidden;
         padding: 0;

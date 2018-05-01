@@ -19,7 +19,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 })({ 1: [function (require, module, exports) {
     /* Third Party Library - jQuery for easy cross-browsing element selecting purposes only */
     window.jQuery = window.$ = require('./lib/jquery-2.2.4.min.js');
-    window.NYTD = {}; // to Store Global Object name spaced as NYTD
+    window.NYTD = {}; // to Store Global Object name-spaced as NYTD
 
     /* Main Controller */
     document.addEventListener("DOMContentLoaded", require('./controllers'));

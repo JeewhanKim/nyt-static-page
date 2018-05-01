@@ -1,40 +1,33 @@
-# NYT Website using provided JSON
+# NYT Project: Static Website Generation from JSONP
+Creates new web contents 
+ with 
 
+Generate contents of the JSONP file.
 The basic structure for react with webpack and gulp boilerplate.
 
-#### Requirements
-Node ver 4.0.0+
-- This code is written in ES6 including `gulpfile.js`. 
+## Getting Started
 
-To check your node version weather supports ES6 - V8 engine:
-```sh
-node -p process.versions.v8
-```
-
-#### Folder Structure
-- `/src/view-controller` --- React components
-- `/src/view/` --- static html files
-- `/src/js/` --- other JS libraries & plugins, etc
-- `/dist/` --- generated folder for dev server & production
-
-#### Basic Usage
-
-### Installation
-
+### Dependencies
+- This code is written in ES6 including `gulpfile.js`. Node ver 4+ is required.
+- Install npm dependencies
 ```sh
 # NPM
 npm install 
 ```
+This downloads all dependencies listed in package.json including Gulp.
 
-### Gulp
+### Quick Start
+You can simply just open `dist/index.html` file to see the bundled app.
 
-Gulp dev supports local web server. 
-Gulp Prod generates static contents as well as the bundled JS/CSS file.
-
+Run gulp and it will bundle your resources and open your browser with the url: http://localhost:8080/dist/index.html
 ```sh
 gulp
 ```
 
-```sh
-gulp prod
-```
+## Folder Structure
+- `/src/index.html` --- static index html
+- `/src/js/` --- JS library (jQuery 2.2.4), main app JS
+- `/src/style/` --- main SCSS file folder
+- `/dist/` --- generated folder for dev server & production
+
+## Developer Note

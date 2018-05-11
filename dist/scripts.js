@@ -147,9 +147,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
       var domElements = require('./_dom.js'); // static page dom elements
       var data = []; // data [objects] to store refined json contents
 
-      /*
-      * Initial Validation
-      */
+      // Initial Validation
       if (json.page === undefined || json.page.content === undefined) {
         console.log('invalid JSON format');
         return;
@@ -160,17 +158,17 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
       }
 
       /*
-      * Step 1. Refine JSON file to get only A~C Column named contents
+      * Refine JSON file to get only A~C Column named contents
       */
       var refinedContents = require('./_data')(json);
 
       /*
-      * Step 2. Parse valid JSON data and store into the "refined" data object array.
+      * Parse valid JSON data and store into the "refined" data object array.
       */
       require('./_parser.js')(refinedContents, data);
 
       /*
-      * Step 3. Generate & Render DOM HTML from refined data.
+      * Generate & Render DOM HTML from refined data.
       */
       var viewController = require('./_generate.js');
       viewController(domElements.getMain(), data);

@@ -3,9 +3,7 @@ NYTD.render_section_front = (json) => {
   const domElements = require('./_dom.js') // static page dom elements
   let data = [] // data [objects] to store refined json contents
 
-  /*
-  * Initial Validation
-  */
+  // Initial Validation
   if(json.page === undefined || json.page.content === undefined) {
     console.log('invalid JSON format')
     return
@@ -16,17 +14,17 @@ NYTD.render_section_front = (json) => {
   }
 
   /*
-  * Step 1. Refine JSON file to get only A~C Column named contents
+  * Refine JSON file to get only A~C Column named contents
   */
   const refinedContents = require('./_data')(json)
 
   /*
-  * Step 2. Parse valid JSON data and store into the "refined" data object array.
+  * Parse valid JSON data and store into the "refined" data object array.
   */
   require('./_parser.js')(refinedContents, data)
 
   /*
-  * Step 3. Generate & Render DOM HTML from refined data.
+  * Generate & Render DOM HTML from refined data.
   */
   const viewController = require('./_generate.js')
   viewController(domElements.getMain(), data)

@@ -7,6 +7,9 @@ const plugins = gulpLoadPlugins()
 const browserify = require('browserify')
 const source = require('vinyl-source-stream')
 const buffer = require('vinyl-buffer')
+const config = {
+  'dist': './dist/'
+}
 
 gulp.task('default', () =>  {
   gulp.start('dev')
@@ -27,8 +30,8 @@ gulp.task('dev-sass', () => {
     }))
     .pipe(plugins.concat('style.css'))
     .pipe(plugins.sourcemaps.write())
-    .pipe(gulp.dest('./dist/'))
-    .pipe(browserSync.reload({stream:true}));
+    .pipe(gulp.dest(config.dist))
+    .pipe(browserSync.reload({stream:true}))
 })
 
 gulp.task('dev-js', () => {
@@ -37,12 +40,12 @@ gulp.task('dev-js', () => {
     .pipe(source('scripts.js'))
     .pipe(buffer())
     .pipe(plugins.babel({presets: ['es2015']}))
-    .pipe(gulp.dest('./dist/'))
+    .pipe(gulp.dest(config.dist))
 })
 
 gulp.task('dev-views', () => {
   return gulp.src('./src/index.html')
-  .pipe(gulp.dest('./dist/'))
+  .pipe(gulp.dest(config.dist))
 })
 
 gulp.task('dev-watch', ['dev-browserSync'], () => {

@@ -1,4 +1,3 @@
-/* Usage of media query mixin: mobile only */
 @include mq-mobile-only() {
     header {
         h2 {

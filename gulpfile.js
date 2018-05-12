@@ -8,7 +8,12 @@ const browserify = require('browserify')
 const source = require('vinyl-source-stream')
 const buffer = require('vinyl-buffer')
 const config = {
-  'dist': './dist/'
+  'dist': './dist/',
+  'src': {
+    'html': 'index.html',
+    'style': './src/style/',
+    'js': './src/js/'
+  }
 }
 
 gulp.task('default', () =>  {
@@ -22,7 +27,7 @@ gulp.task('dev', [
 ], () => {gulp.start('dev-watch')})
 
 gulp.task('dev-sass', () => {
-  return gulp.src('./src/style/index.scss')
+  return gulp.src(config.src.style + 'index.scss')
     .pipe(plugins.sourcemaps.init())
     .pipe(plugins.sass({
       indentedSyntax: false,
@@ -35,7 +40,7 @@ gulp.task('dev-sass', () => {
 })
 
 gulp.task('dev-js', () => {
-  return browserify({entries: ['./src/js/index.js']})
+  return browserify({entries: [config.src.js + 'index.js']})
     .bundle()
     .pipe(source('scripts.js'))
     .pipe(buffer())
@@ -44,14 +49,14 @@ gulp.task('dev-js', () => {
 })
 
 gulp.task('dev-views', () => {
-  return gulp.src('./src/index.html')
+  return gulp.src(config.src.html)
   .pipe(gulp.dest(config.dist))
 })
 
 gulp.task('dev-watch', ['dev-browserSync'], () => {
-  gulp.watch('./src/index.html').on('change', () => gulp.start('dev-views'))
-  gulp.watch('./src/js/**', ['dev-js'])
-  gulp.watch('./src/style/**', ['dev-sass'])
+  gulp.watch(config.src.html).on('change', () => gulp.start('dev-views'))
+  gulp.watch(config.src.js + '**', ['dev-js'])
+  gulp.watch(config.src.style + '**', ['dev-sass'])
 })
 
 gulp.task('dev-browserSync', () => {return browserSync(
